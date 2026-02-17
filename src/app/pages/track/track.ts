@@ -13,7 +13,7 @@ export class Track {
   trackNumber = '';
   trackResult: any = signal(null);
 
-  constructor(private deliveryApi: DeliveryApi){}
+  constructor(private deliveryApi: DeliveryApi) {}
 
   trackShipment(): void {
     const rawValue = this.trackNumber.trim();

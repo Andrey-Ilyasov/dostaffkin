@@ -11,7 +11,7 @@
                 <div class="main-fields">
                     <div class="main-field" id="fromField">
                         <div class="main-pin"></div>
-                        <input id="from" formControlName="from" [attr.disableb]="!!orderId()"
+                        <input id="from" formControlName="from" [attr.disabled]="!!orderId()"
                             placeholder="Откуда: начните вводить адрес" autocomplete="off" />
                         <div class="main-ac" id="fromAc" role="listbox" aria-label="Подсказки адресов"></div>
                     </div>
@@ -21,7 +21,7 @@
                     }
                     <div class="main-field" id="toField">
                         <div class="main-pin"></div>
-                        <input id="to" formControlName="to" [attr.disableb]="!!orderId()"
+                        <input id="to" formControlName="to" [attr.disabled]="!!orderId()"
                             placeholder="Куда: начните вводить адрес" autocomplete="off" />
                         <div class="main-ac" id="toAc" role="listbox" aria-label="Подсказки адресов">
                         </div>
@@ -33,8 +33,6 @@
                 </div>
                 <div class="main-package" [style.display]="orderId()?'none' :null">
                     <div class="main-block-title">Размер посылки</div>
-
-
                     @for (size of sizes; track size.value) {
                     <div class="main-size-card" [class.is-active]="routeForm.value.size === size.value"
                         (click)="selectSize(size.value)">
@@ -48,14 +46,10 @@
                         <div class="main-size-description" [innerHTML]="size.description"></div>
                     </div>
                     }
-
-
-
                 </div>
             </div>
             <div class="main-speed">
                 <div class="main-block-title">Скорость доставки</div>
-
                 <div class="main-speeds" [style.display]="orderId()?'none' :null">
                     @for (speed of speeds; track speed.value) {
                     <div class="main-speed-card" [class.is-active]="routeForm.value.speed === speed.value"
@@ -65,9 +59,7 @@
                     </div>
                     }
                 </div>
-
             </div>
-
             <div class="main-calculate-block" [style.display]="orderId()?'none' :null">
                 <button id="calc" class="button calculate-button" type="button" [disabled]="routeForm.invalid"
                     (click)="calculate()">Рассчитать</button>
@@ -131,7 +123,6 @@
                         заявку
                     </button>
                 </div>
-
                 <div class="main-order-success" id="orderSuccess" [class.is-visible]="orderId()">
                     <div class="main-success-icon">✓</div>
                     <div class="main-success-title">Заявка отправлена!</div>

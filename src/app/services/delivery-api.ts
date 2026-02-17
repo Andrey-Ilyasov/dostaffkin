@@ -18,7 +18,6 @@ export class DeliveryApi {
       );
   }
 
-
   getDeliveryInfo(id: number): Observable<any> {
     return this.http
       .get<any>(`https://testologia.ru/delivery/info`, { params: { id } })
